@@ -16,7 +16,7 @@ Sistema de e-commerce desenvolvido em **Java puro** utilizando apenas recursos n
 - ✅ Criar e visualizar pedidos
 - ✅ Listar produtos disponíveis
 - ✅ Consultar clientes registrados
-- ✅ Acompanhar todos os pedidos
+- ✅ Acompanhar todos os pedidos realizados
 
 ### 👤 Perfil Cliente
 - ✅ Criar conta no sistema
@@ -35,8 +35,10 @@ O projeto segue uma separação clara de responsabilidades, organizando o códig
 ```
 src/
 ├── Main.java                      # Interface com usuário (menu e I/O)
-├── controller/
-│   └── SistemaEcommerce.java     # Lógica de negócio e orquestração
+├── service/
+│   └── ClienteService.java     # Lógica Cadastro e exibição dos clientes cadastrados
+│   └── ProdutoService.java     # Lógica Cadastro, exibição e filtro por ID dos Produtos cadastrados
+│   └── PedidoService.java      # Lógica Cadastro e exibição dos Pedidos Realizados
 └── models/
     ├── Cliente.java               # Entidade Cliente
     ├── Produto.java               # Entidade Produto
@@ -53,7 +55,7 @@ src/
 - Delegação de operações ao Controller
 - **Não contém regras de negócio**
 
-#### 🎮 Controller (SistemaEcommerce)
+#### 🎮 Services (ProdutoService, ClienteService & PedidoService)
 - Centralização das regras de negócio
 - Gerenciamento de produtos, clientes e pedidos
 - Validações e controle de fluxo
@@ -62,7 +64,7 @@ src/
 #### 📦 Models
 - Representação do domínio da aplicação
 - Dados e comportamentos das entidades
-- Aplicação de princípios OOP (Encapsulamento, Associação)
+- Aplicação de princípios OOP (Encapsulamento, Polimorfismo & Associação)
 
 ---
 
@@ -129,10 +131,8 @@ Este projeto foi desenvolvido **intencionalmente sem frameworks**, com os seguin
 ## 🔮 Próximas Evoluções Planejadas
 
 - [ ] Persistência em arquivo (serialização) ou banco de dados
-- [ ] Sistema de login com autenticação
 - [ ] Controle de permissões por perfil
 - [ ] Refatoração para **Spring Boot**
-- [ ] Implementação de camada Service
 - [ ] Criação de testes automatizados (JUnit)
 - [ ] API REST com endpoints
 - [ ] Interface web (Thymeleaf ou React)
